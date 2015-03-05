@@ -31,5 +31,6 @@ function workon_dir -d 'Changes the directory of the working env or $arg env'
     set dir (pwd)
     cat "$HOME/.fishenvs/envs" | egrep -v "^$fishenv" > $HOME/.fishenvs/envs
     echo "$fishenv $dir" >> ~/.fishenvs/envs
-    
 end
+
+complete -c workon -f -a "(cat "$HOME/.fishenvs/envs" | cut -d' ' -f1 )" -d "Virtual Env"

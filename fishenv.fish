@@ -1,5 +1,5 @@
 #!/usr/bin/fish
-function mkvirtualenv
+function mkvirtualenv -d 'Create virtualenv on the current directory'
     if test -z (cat $HOME/.fishenvs/envs | egrep -i "^$argv[1]" | head -n 1)
         set dir (pwd)
         mkdir -p "$HOME/.fishenvs/"
@@ -14,7 +14,7 @@ function mkvirtualenv
     end
 end
 
-function workon
+function workon -d 'Loads $arg env and cd in to env\'s folder'
     . $HOME/.fishenvs/$argv[1]/bin/activate.fish
     set -U fishenv $argv[1]
     cd (get_env_dir $argv[1])
@@ -24,7 +24,7 @@ function get_env_dir
     echo (cat "$HOME/.fishenvs/envs" | egrep "^$argv[1]" | cut -d' ' -f2- | head -n 1)
 end
 
-function workon_dir
+function workon_dir -d 'Changes the directory of the working env or $arg env'
     if test -z $fishenv
         set -U fishenv $argv[1]
     end

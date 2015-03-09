@@ -33,4 +33,12 @@ function workon_dir -d 'Changes the directory of the working env or $arg env'
     echo "$fishenv $dir" >> ~/.fishenvs/envs
 end
 
-complete -c workon -f -a "(cat "$HOME/.fishenvs/envs" | cut -d' ' -f1 )" -d "Virtual Env"
+function __fish_fishenv_using_command
+    set opts (commandline -opc)
+    if [ (count $opts) = 1 ]
+        return 0
+    end
+    return 1
+end
+
+complete -c workon -f -n "__fish_fishenv_using_command" -a "(cat "$HOME/.fishenvs/envs" | cut -d' ' -f1 )" -d "Virtual Env"

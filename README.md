@@ -5,8 +5,11 @@ Fishshell implementation of the [Virtualenvwrapper](https://virtualenvwrapper.re
 With tab completion!
 
 
-### How to install
+#### Requisites
 
+* [virtualenv](https://pypi.python.org/pypi/virtualenv)
+
+#### How to install
 First download the script to your pc.
 ````bash
 wget https://raw.githubusercontent.com/mbodock/FishEnv/master/fishenv.fish

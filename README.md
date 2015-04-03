@@ -1,6 +1,7 @@
 # FishEnv
 
 Fishshell implementation of the [Virtualenvwrapper](https://virtualenvwrapper.readthedocs.org/en/latest/).
+
 With tab completion!
 
 
@@ -8,7 +9,7 @@ With tab completion!
 
 First download the script to your pc.
 ````bash
-wget https://github.com/mbodock/FishEnv/blob/master/fishenv.fish
+wget https://raw.githubusercontent.com/mbodock/FishEnv/master/fishenv.fish
 ````
 Then source the [file](FishEnv/fishenv.fish) in you config.fish.
 That's it.

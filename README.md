@@ -9,6 +9,7 @@ With tab completion!
 
 * [virtualenv](https://pypi.python.org/pypi/virtualenv)
 
+
 #### How to install
 First download the script to your pc.
 ````bash
@@ -24,3 +25,8 @@ That's it.
 * `workon <env>` this command will activate the virtualenv and switch to the projects directory.
 * `workon_dir <arg>` Changes the directory of the working env or <arg> env.
 * `deactivate` Deactivates the current virtualenv.
+
+
+### Working with Python 3
+
+If you want your VirtualEnv with python 3just pass the optinal argument `--python=/usr/bin/python3`.

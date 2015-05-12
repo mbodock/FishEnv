@@ -4,7 +4,7 @@ function mkvirtualenv -d 'Create virtualenv on the current directory'
         set dir (pwd)
         mkdir -p "$HOME/.fishenvs/"
         cd "$HOME/.fishenvs/"
-        virtualenv $argv[1]
+        virtualenv $argv[1] $argv[2..-1]
         echo "$argv[1] $dir" >> ~/.fishenvs/envs
         cd $dir
     else

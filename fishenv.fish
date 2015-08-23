@@ -19,6 +19,25 @@ function mkvirtualenv -d 'Create virtualenv on the current directory'
     end
 end
 
+function rmvirtualenv -d 'Removes <name> virtualenv'
+    set -l envs (cat $HOME/.fishenvs/envs | egrep -i "^$argv[1] "|cut -d' ' -f1 )
+    set -l matchs (echo $envs| wc -w)
+    if [ $matchs = '1' ]
+        cat $HOME/.fishenvs/envs | egrep -v -i "^$argv[1] " > /tmp/pivot.tmp
+        cat /tmp/pivot.tmp > $HOME/.fishenvs/envs
+        rm /tmp/pivot.tmp
+        rm -rf "$HOME/.fishenvs/$argv[1]"
+        echo "VirtualEnv removed: "$envs
+    else if [ $matchs = '2' ]
+        set_color F00
+        echo 'Multiples Envs found.'
+        set_color normal
+        echo $envs | xargs
+    else
+        echo "VirtualEnv not found."
+    end
+end
+
 function workon -d 'Loads $arg env and cd in to env\'s folder'
     . $HOME/.fishenvs/$argv[1]/bin/activate.fish
     set -U fishenv $argv[1]

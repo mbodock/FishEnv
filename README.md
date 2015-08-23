@@ -22,6 +22,7 @@ That's it.
 ### Functions
 
 * `mkvirtualenv <env>` Creates a virtualenv in ~/.fishenvs/ which will points to the current directory.
+* `rmvirtualenv <env>` Deletes a virtualenv
 * `workon <env>` this command will activate the virtualenv and switch to the projects directory.
 * `workon_dir <arg>` Changes the directory of the working env or <arg> env.
 * `deactivate` Deactivates the current virtualenv.

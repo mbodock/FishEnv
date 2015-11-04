@@ -20,7 +20,7 @@ function mkvirtualenv -d 'Create virtualenv on the current directory'
 end
 
 function rmvirtualenv -d 'Removes <name> virtualenv'
-    set -l envs (cat $HOME/.fishenvs/envs | egrep -i "^$argv[1] "|cut -d' ' -f1 )
+    set -l envs (cat $HOME/.fishenvs/envs | grep -i "^$argv[1] "|cut -d' ' -f1 )
     set -l matchs (echo $envs| wc -w)
     if [ $matchs = '1' ]
         cat $HOME/.fishenvs/envs | egrep -v -i "^$argv[1] " > /tmp/pivot.tmp

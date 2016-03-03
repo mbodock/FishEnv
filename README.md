@@ -23,9 +23,10 @@ That's it.
 
 * `mkvirtualenv <env>` Creates a virtualenv in ~/.fishenvs/ which will points to the current directory.
 * `rmvirtualenv <env>` Deletes a virtualenv
+* `mktmpenv [env]` Creates a temporary virtualenv that will be deleted after deactivation.
 * `workon <env>` this command will activate the virtualenv and switch to the projects directory.
-* `workon_dir <arg>` Changes the directory of the working env or <arg> env.
-* `deactivate` Deactivates the current virtualenv.
+* `workon_dir [arg]` Changes the directory of the working env or <arg> env.
+* `deactivate` Deactivates the current virtualenv. Also deletes if it is a temporary env
 
 
 ### Working with Python 3

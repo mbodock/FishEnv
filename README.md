@@ -30,4 +30,4 @@ That's it.
 
 ### Working with Python 3
 
-If you want your VirtualEnv with python 3just pass the optinal argument `--python=/usr/bin/python3`.
+If you want your VirtualEnv with python 3 just pass the optinal argument `--python=/usr/bin/python3`.

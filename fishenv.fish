@@ -1,6 +1,6 @@
 #!/usr/bin/fish
 function mkvirtualenv -d 'Create virtualenv on the current directory'
-    if test -z (cat $HOME/.fishenvs/envs | egrep -i "^$argv[1]" | head -n 1)
+    if test -z (cat $HOME/.fishenvs/envs | egrep -i "^$argv[1]\$" | head -n 1)
         set dir (pwd)
         mkdir -p "$HOME/.fishenvs/"
         cd "$HOME/.fishenvs/"
